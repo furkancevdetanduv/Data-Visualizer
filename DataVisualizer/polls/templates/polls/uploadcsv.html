@@ -1,0 +1,39 @@
+<form action="{% url "polls:uploadcsv" %}" method="POST" enctype="multipart/form-data" class="form-horizontal"> 
+{% csrf_token %}
+<div class="form-group">
+    <label for="name" class="col-md-3 col-sm-3 col-xs-12 control-label">File: </label>
+    <div class="col-md-8">
+        <input type="file" name="csv_file" id="csv_file" required="True" class="form-control">
+    </div>                    
+</div>
+<div class="form-group">                    
+    <div class="col-md-3 col-sm-3 col-xs-12 col-md-offset-3" style="margin-bottom:10px;">
+         <button class="btn btn-primary"> <span class="glyphicon glyphicon-upload" style="margin-right:5px;"></span>Upload </button>
+    </div> 
+</div>
+</form>
+
+<!--<!DOCTYPE html>
+<html>
+
+<form id="add-photos" action="{% url 'polls:uploadcsv' %}" method = "POST"  enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div  id ="x" style="color:#d2d;height:500px;width:500px;"></div>
+    </form>
+
+<script src="{% url 'polls:dropzone' %}"></script>
+<script type="text/javascript">
+	var myDropzone = new Dropzone("div#x", { url: '/polls/uploadcsv/',method:'post',enctype:"multipart/form-data"});
+	myDropzone.on("success", function(file){   
+	  $(".dz-success-mark svg").css("background", "green");
+	  $(".dz-error-mark").css("display", "none");
+	});
+	myDropzone.on("error", function(file) {
+	  $(".dz-error-mark svg").css("background", "red");
+	  $(".dz-success-mark").css("display", "none");
+	});
+</script>
+
+</html>
+-->

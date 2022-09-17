@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	
+	<style type="text/css">
+		head {
+			background-color: red;
+		}
+	</style>
+
+	<head style ="color:red;">First Page </head>
+
+	{% if latest_question_list %}
+    <ol>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{question.question_text }}</a></li>
+    	{% endfor %}
+   	</ol>
+	{% else %}
+    	<p>No polls are available.</p>
+	{% endif %}
+
+</html>
